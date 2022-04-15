@@ -13,7 +13,7 @@ import { createTask } from '../../store/actions/task.action';
 })
 export class CreateTaskComponent implements OnInit {
   public form!: FormGroup;
-  constructor(private fb: FormBuilder, private sotre: Store) {}
+  constructor(private fb: FormBuilder, private store: Store) {}
 
   public ngOnInit(): void {
     this.initializeForm();
@@ -28,6 +28,6 @@ export class CreateTaskComponent implements OnInit {
   }
 
   public createTask() {
-    this.sotre.dispatch(createTask({ task: this.form.value }));
+    this.store.dispatch(createTask({ task: this.form.value }));
   }
 }
