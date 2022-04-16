@@ -1,4 +1,3 @@
-import { TaskInterface } from './../../types/task.interface';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import * as moment from 'moment';
@@ -12,6 +11,7 @@ import { createTask } from '../../store/actions/task.action';
   styleUrls: ['./create-task.component.scss'],
 })
 export class CreateTaskComponent implements OnInit {
+  public currentDate = moment().startOf('day');
   public form!: FormGroup;
   constructor(private fb: FormBuilder, private store: Store) {}
 
@@ -22,12 +22,12 @@ export class CreateTaskComponent implements OnInit {
     this.form = this.fb.group({
       title: '',
       description: '',
-      date: moment().startOf('day').add(1, 'day'),
+      date: moment(),
       status: TaskStatusInterface.InPgrogess,
     });
   }
 
-  public createTask() {
+  public createTask(): void {
     this.store.dispatch(createTask({ task: this.form.value }));
   }
 }
