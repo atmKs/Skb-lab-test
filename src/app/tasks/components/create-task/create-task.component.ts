@@ -69,7 +69,11 @@ export class CreateTaskComponent implements OnInit {
       }
     }
     if (this.dialogRef) {
-      this.dialogRef.close();
+      this.dialogRefClose();
     }
+  }
+
+  public dialogRefClose(): void {
+    this.dialogRef.close();
   }
 }

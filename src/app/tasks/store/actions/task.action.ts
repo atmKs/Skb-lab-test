@@ -17,5 +17,3 @@ export const DeleteTask = createAction(
   ActionTypes.DELETE_TASK,
   props<{ taskId: string }>()
 );
-
-

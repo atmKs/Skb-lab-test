@@ -23,7 +23,7 @@
       </div>
     </mat-card-content>
     <mat-card-actions align="end">
-      <button type="button" mat-raised-button color="accient">Cancel</button>
+      <button type="button" (click)="dialogRefClose()" mat-raised-button color="accient">Cancel</button>
       <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">{{editTask ? "Save":
         "Add"}}</button>
     </mat-card-actions>

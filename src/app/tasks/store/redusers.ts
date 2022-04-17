@@ -23,5 +23,3 @@ const tasksReduser = createReducer(
 export const reducers = (state: State, acion: Action) => {
   return tasksReduser(state, acion);
 };
-
-

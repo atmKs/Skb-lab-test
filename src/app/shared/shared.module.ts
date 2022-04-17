@@ -15,6 +15,7 @@ import {
   MatMomentDateModule,
   MomentDateAdapter,
 } from '@angular/material-moment-adapter';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DateAdapter } from '@angular/material/core';
 @NgModule({
   imports: [CommonModule],
@@ -31,6 +32,7 @@ import { DateAdapter } from '@angular/material/core';
     MatDatepickerModule,
     MatMomentDateModule,
     MatDialogModule,
+    DragDropModule,
   ],
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter }],
 })
