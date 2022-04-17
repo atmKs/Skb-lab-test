@@ -10,11 +10,9 @@ import { DeleteTask } from '../../store/actions/task.action';
   templateUrl: './tasks-list.component.html',
   styleUrls: ['./tasks-list.component.scss'],
 })
-export class TasksListComponent implements OnInit {
+export class TasksListComponent {
   @Input() public tasks: TaskInterface[] = [];
   constructor(private store: Store, private dialog: MatDialog) {}
-
-  ngOnInit() {}
 
   public openCreateTask(): void {
     this.dialog.open(CreateTaskComponent);

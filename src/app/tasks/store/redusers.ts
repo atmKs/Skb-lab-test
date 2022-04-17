@@ -16,7 +16,7 @@ const tasksReduser = createReducer(
       state
     )
   ),
-  on(EditTask, (state, { update }) => adapter.updateOne(update, state)),
+  on(EditTask, (state, { updateTask }) => adapter.updateOne(updateTask, state)),
   on(DeleteTask, (state, { taskId }) => adapter.removeOne(taskId, state))
 );
 

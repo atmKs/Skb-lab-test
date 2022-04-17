@@ -16,7 +16,6 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: 'create', component: CreateTaskComponent },
-      { path: 'edit/:id', component: CreateTaskComponent },
     ],
   },
 ];

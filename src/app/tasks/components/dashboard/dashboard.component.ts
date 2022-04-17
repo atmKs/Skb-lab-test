@@ -15,8 +15,8 @@ import { allTasksSelector } from '../../store/selectors';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-  taskSubscription!: Subscription;
-  tasks: TaskInterface[] = [];
+  public taskSubscription!: Subscription;
+  public tasks: TaskInterface[] = [];
   constructor(private store: Store) {}
 
   public ngOnInit(): void {

@@ -10,7 +10,7 @@ export const createTask = createAction(
 
 export const EditTask = createAction(
   ActionTypes.EDIT_TASK,
-  props<{ update: Update<TaskInterface> }>()
+  props<{ updateTask: Update<TaskInterface> }>()
 );
 
 export const DeleteTask = createAction(
