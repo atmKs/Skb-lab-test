@@ -12,3 +12,8 @@ export const EditTask = createAction(
   ActionTypes.EDIT_TASK,
   props<{ update: Update<TaskInterface> }>()
 );
+
+export const DeleteTask = createAction(
+  ActionTypes.DELETE_TASK,
+  props<{ taskId: string }>()
+);

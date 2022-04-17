@@ -1,7 +1,7 @@
-<form [formGroup]="form" class="form" (ngSubmit)="createTask()">
+<form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
   <mat-card>
     <mat-card-header class="title">
-      <mat-card-title>Add new Task</mat-card-title>
+      <mat-card-title>{{editTask ? "Edit task": "Add new Task"}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="form-fields">
@@ -24,7 +24,8 @@
     </mat-card-content>
     <mat-card-actions align="end">
       <button type="button" mat-raised-button color="accient">Cancel</button>
-      <button type="submit" mat-raised-button color="primary">Add</button>
+      <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">{{editTask ? "Save":
+        "Add"}}</button>
     </mat-card-actions>
   </mat-card>
 </form>

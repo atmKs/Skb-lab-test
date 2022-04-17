@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import {
   MatMomentDateModule,
   MomentDateAdapter,
@@ -30,6 +30,7 @@ import { DateAdapter } from '@angular/material/core';
     MatFormFieldModule,
     MatDatepickerModule,
     MatMomentDateModule,
+    MatDialogModule,
   ],
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter }],
 })

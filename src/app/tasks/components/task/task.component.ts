@@ -1,14 +1,21 @@
 import { TaskInterface } from './../../types/task.interface';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.scss'],
 })
-export class TaskComponent implements OnInit {
-  @Input() task!: TaskInterface;
-  constructor() {}
+export class TaskComponent {
+  @Input() public task!: TaskInterface;
 
-  ngOnInit() {}
+  @Output() public delete = new EventEmitter();
+  @Output() public edit = new EventEmitter();
+
+  public onDeleteTask(): void {
+    this.delete.emit(this.task);
+  }
+  public onEditTask(): void {
+    this.edit.emit(this.task);
+  }
 }

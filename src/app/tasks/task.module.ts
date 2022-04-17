@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { reducers } from './store/redusers';
 import { StoreModule } from '@ngrx/store';
 import { SharedModule } from '../shared/shared.module';
+import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: 'create', component: CreateTaskComponent },
+      { path: 'edit/:id', component: CreateTaskComponent },
     ],
   },
 ];
@@ -26,6 +28,11 @@ const routes: Routes = [
     StoreModule.forFeature('tasks', reducers),
     SharedModule,
   ],
-  declarations: [TaskComponent, CreateTaskComponent, DashboardComponent],
+  declarations: [
+    TaskComponent,
+    CreateTaskComponent,
+    DashboardComponent,
+    TasksListComponent,
+  ],
 })
 export class TaskModule {}
