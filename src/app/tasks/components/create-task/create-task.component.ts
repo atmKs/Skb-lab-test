@@ -54,7 +54,7 @@ export class CreateTaskComponent implements OnInit {
         this.editTask = true;
         this.store
           .select(taskIdSelector(this.taskId))
-          .subscribe((task) => this.form.patchValue(task));
+          .subscribe((task) => this.form.patchValue({ task }));
       }
     });
   }
@@ -65,9 +65,10 @@ export class CreateTaskComponent implements OnInit {
         this.store.dispatch(
           EditTask({ update: { id: this.taskId, changes: this.form.value } })
         );
+      } else {
+        this.store.dispatch(createTask({ task: this.form.value }));
+        this.form.reset();
       }
-      this.store.dispatch(createTask({ task: this.form.value }));
-      this.form.reset();
     }
     if (this.dialogRef) {
       this.dialogRef.close();
