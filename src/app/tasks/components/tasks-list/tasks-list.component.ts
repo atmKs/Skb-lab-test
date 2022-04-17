@@ -1,4 +1,4 @@
-
+import { ViewTaskComponent } from './../view-task/view-task.component';
 import { TaskInterface } from './../../types/task.interface';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,11 +20,16 @@ export class TasksListComponent {
     this.dialog.open(CreateTaskComponent);
   }
 
-  onTaskDelete(task: TaskInterface) {
+  public onTaskDelete(task: TaskInterface): void {
     this.store.dispatch(DeleteTask({ taskId: task.id }));
   }
-  onTaskEdit(task: TaskInterface) {
+  public onTaskEdit(task: TaskInterface): void {
     this.dialog.open(CreateTaskComponent, {
+      data: task,
+    });
+  }
+  public onTaskView(task: TaskInterface) {
+    this.dialog.open(ViewTaskComponent, {
       data: task,
     });
   }

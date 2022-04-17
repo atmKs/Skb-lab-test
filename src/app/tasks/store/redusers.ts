@@ -1,7 +1,12 @@
 import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
 
-import { createTask, DeleteTask, EditTask } from './actions/task.action';
+import {
+  createTask,
+  DeleteTask,
+  EditTask,
+
+} from './actions/task.action';
 import { TaskInterface } from '../types/task.interface';
 import { State } from '../types/state.Interface';
 
@@ -17,7 +22,7 @@ const tasksReduser = createReducer(
     )
   ),
   on(EditTask, (state, { updateTask }) => adapter.updateOne(updateTask, state)),
-  on(DeleteTask, (state, { taskId }) => adapter.removeOne(taskId, state))
+  on(DeleteTask, (state, { taskId }) => adapter.removeOne(taskId, state)),
 );
 
 export const reducers = (state: State, acion: Action) => {

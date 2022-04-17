@@ -18,6 +18,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class CreateTaskComponent implements OnInit {
   public editTask = false;
+  public viewTask = false;
   public taskIdSubscribtion!: Subscription;
   public currentDate = moment().startOf('day');
   public form!: FormGroup;
@@ -32,12 +33,10 @@ export class CreateTaskComponent implements OnInit {
 
   public ngOnInit(): void {
     this.initializeForm();
+    this.initializeValues();
     this.initializeListeners();
-    if (this.dialogData) {
-      this.editTask = true;
-      this.taskId = this.dialogData.id;
-    }
   }
+
   public initializeForm(): void {
     this.form = this.fb.group({
       title: ['', Validators.required],
@@ -46,6 +45,13 @@ export class CreateTaskComponent implements OnInit {
       status: TaskStatusInterface.InPgrogess,
     });
     this.form.patchValue(this.dialogData);
+  }
+
+  public initializeValues(): void {
+    if (this.dialogData) {
+      this.editTask = true;
+      this.taskId = this.dialogData.id;
+    }
   }
   public initializeListeners(): void {
     if (this.taskId) {
