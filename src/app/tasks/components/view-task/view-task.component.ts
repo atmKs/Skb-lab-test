@@ -15,11 +15,17 @@ export class ViewTaskComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.initializeValues();
+  }
+
+  public initializeValues(): void {
     if (this.dialogData) {
       this.task = this.dialogData;
     }
   }
   public dialogRefClose(): void {
-    this.dialogRef.close();
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,6 +18,7 @@ import {
 } from '@angular/material-moment-adapter';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DateAdapter } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   imports: [CommonModule],
   exports: [
@@ -33,6 +35,8 @@ import { DateAdapter } from '@angular/material/core';
     MatMomentDateModule,
     MatDialogModule,
     DragDropModule,
+    FormsModule,
+    MatCheckboxModule,
   ],
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter }],
 })

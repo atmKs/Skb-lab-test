@@ -2,3 +2,24 @@
   min-width: 400px;
   margin-bottom: 10px;
 }
+
+.task-closed {
+  background: rgb(216, 206, 206);
+}
+
+.example-margin {
+  width: 20px;
+  height: 30px;
+}
+
+.mat-checkbox {
+  position: absolute;
+  bottom: 8%;
+  right: 32%;
+  .mat-checkbox-frame {
+    transform: scale(1.2);
+  }
+  .mat-checkbox-checked.mat-checkbox-background {
+    transform: scale(1.2);
+  }
+}
