@@ -5,7 +5,7 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
 import { TaskComponent } from './components/task/task.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { reducers } from './store/redusers';
 import { StoreModule } from '@ngrx/store';
 import { SharedModule } from '../shared/shared.module';
@@ -16,6 +16,7 @@ import { TaskRoutingModule } from './task-routing.module';
   imports: [
     CommonModule,
     TaskRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     StoreModule.forFeature('tasks', reducers),
     SharedModule,
