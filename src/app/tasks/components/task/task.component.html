@@ -1,4 +1,4 @@
-<mat-card [class.task-closed]="checked">
+<mat-card [class.task-closed]="checked" [class]="class">
   <mat-card-title-group>
     <mat-card-title>{{task.title}}</mat-card-title>
     <mat-card-subtitle>{{task.date.toDate() | date:"d MMMM, YYYY"}}</mat-card-subtitle>

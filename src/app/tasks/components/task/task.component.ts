@@ -1,5 +1,12 @@
 import { TaskInterface } from './../../types/task.interface';
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import * as moment from 'moment';
 
 @Component({
@@ -10,11 +17,9 @@ import * as moment from 'moment';
 })
 export class TaskComponent implements OnInit {
   public checked = false;
+  public class = '';
   ngOnInit(): void {
-    // const startof = this.task.date.add(3, 'day');
-    // console.log(moment().valueOf());
-    // if (this.task.date) {
-    // }
+    this.setClass();
   }
   @Input() public task!: TaskInterface;
 
@@ -30,5 +35,16 @@ export class TaskComponent implements OnInit {
   }
   public onViewTask() {
     this.view.emit(this.task);
+  }
+
+  public setClass(): void {
+    if (
+      this.task.date.diff(moment().startOf('day'), 'd') <= 3 &&
+      this.task.date.diff(moment().startOf('day'), 'd') > 0
+    ) {
+      this.class = 'yellow';
+    } else if (this.task.date.diff(moment().startOf('day'), 'd') <= 0) {
+      this.class = 'red';
+    }
   }
 }

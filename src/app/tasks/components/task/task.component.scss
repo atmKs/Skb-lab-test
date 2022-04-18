@@ -5,9 +5,15 @@
     display: flex;
   }
 }
+.red {
+  background: rgb(217 23 23 / 56%);
+}
 
+.yellow {
+  background: rgb(229 229 26 / 58%);
+}
 .task-closed {
-  background: rgb(92, 91, 91);
+  background: #7e7e7e;
   text-decoration: line-through;
 }
 
