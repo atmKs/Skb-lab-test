@@ -12,12 +12,14 @@ import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+
 @NgModule({
   declarations: [AppComponent, ToolbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
     TaskModule,
     SharedModule,
     StoreModule.forRoot({}),
