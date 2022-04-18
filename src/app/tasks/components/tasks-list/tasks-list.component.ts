@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTaskComponent } from '../create-task/create-task.component';
 import { Store } from '@ngrx/store';
-import { DeleteTask } from '../../store/actions/task.action';
+import { DeleteTask, ViewTask } from '../../store/actions/task.action';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -29,6 +29,7 @@ export class TasksListComponent {
     });
   }
   public onTaskView(task: TaskInterface) {
+    this.store.dispatch(ViewTask({ task }));
     this.dialog.open(ViewTaskComponent, {
       data: task,
     });

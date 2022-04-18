@@ -18,3 +18,7 @@ export const DeleteTask = createAction(
   props<{ taskId: string }>()
 );
 
+export const ViewTask = createAction(
+  ActionTypes.VIEW_TASK,
+  props<{ task: TaskInterface }>()
+);

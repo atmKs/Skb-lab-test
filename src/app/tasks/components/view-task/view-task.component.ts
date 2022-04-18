@@ -15,6 +15,11 @@ export class ViewTaskComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.task = this.dialogData;
+    if (this.dialogData) {
+      this.task = this.dialogData;
+    }
+  }
+  public dialogRefClose(): void {
+    this.dialogRef.close();
   }
 }

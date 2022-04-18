@@ -5,7 +5,7 @@ import {
   createTask,
   DeleteTask,
   EditTask,
-
+  ViewTask,
 } from './actions/task.action';
 import { TaskInterface } from '../types/task.interface';
 import { State } from '../types/state.Interface';
@@ -23,6 +23,7 @@ const tasksReduser = createReducer(
   ),
   on(EditTask, (state, { updateTask }) => adapter.updateOne(updateTask, state)),
   on(DeleteTask, (state, { taskId }) => adapter.removeOne(taskId, state)),
+  on(ViewTask, (state, { task }) => ({ ...state, selectedTaskId: task.id }))
 );
 
 export const reducers = (state: State, acion: Action) => {
