@@ -34,7 +34,7 @@ export class TasksListComponent {
       data: task,
     });
   }
-  drop(event: CdkDragDrop<TaskInterface>): void {
+  public drop(event: CdkDragDrop<TaskInterface>): void {
     moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
   }
 }

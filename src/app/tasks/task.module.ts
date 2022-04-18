@@ -1,3 +1,4 @@
+import { ViewTaskComponent } from './components/view-task/view-task.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -32,6 +33,7 @@ const routes: Routes = [
     CreateTaskComponent,
     DashboardComponent,
     TasksListComponent,
+    ViewTaskComponent,
   ],
 })
 export class TaskModule {}
