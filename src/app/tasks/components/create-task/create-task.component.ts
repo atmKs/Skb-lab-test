@@ -2,7 +2,14 @@ import { Subscription } from 'rxjs';
 import { TaskInterface } from './../../types/task.interface';
 import { EditTask } from './../../store/actions/task.action';
 import { taskIdSelector } from './../../store/selectors';
-import { Component, Inject, OnInit, Optional, OnDestroy } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnInit,
+  Optional,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { TaskStatusInterface } from '../../types/taskStatus.interface';
@@ -19,6 +26,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class CreateTaskComponent implements OnInit {
   public editTask = false;
   public viewTask = false;
+  public maxTitleFildLength = 100;
+  public maxDescriptionFildLength = 2000;
   public taskIdSubscribtion!: Subscription;
   public currentDate = moment().startOf('day');
   public form!: FormGroup;
@@ -39,8 +48,17 @@ export class CreateTaskComponent implements OnInit {
 
   public initializeForm(): void {
     this.form = this.fb.group({
-      title: ['', Validators.required],
-      description: ['', Validators.required],
+      title: [
+        '',
+        [Validators.required, Validators.maxLength(this.maxTitleFildLength)],
+      ],
+      description: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(this.maxDescriptionFildLength),
+        ],
+      ],
       date: [moment(), Validators.required],
       status: TaskStatusInterface.InPgrogess,
     });
