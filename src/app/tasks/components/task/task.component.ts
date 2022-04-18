@@ -20,7 +20,6 @@ export class TaskComponent implements OnInit {
   public class = '';
   ngOnInit(): void {
     this.setClass();
-    console.log(this.task.date);
   }
   @Input() public task!: TaskInterface;
 
