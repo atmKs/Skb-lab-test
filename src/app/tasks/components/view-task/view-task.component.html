@@ -2,7 +2,9 @@
   <mat-card-title> {{task.title}}</mat-card-title>
   <mat-card-subtitle>{{task.date.toDate() | date:"d MMMM, YYYY"}}</mat-card-subtitle>
   <mat-card-content>
-    <div>{{task.description}}</div>
+    <p>
+      {{task.description}}
+    </p>
   </mat-card-content>
   <mat-card-actions align="end">
     <button type="button" (click)="dialogRefClose()" mat-raised-button color="primary">Close</button>
