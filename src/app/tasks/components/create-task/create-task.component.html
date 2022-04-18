@@ -11,7 +11,8 @@
           <mat-hint align="end">
             {{form.get('title')?.value?.length}} / {{maxTitleFildLength}}
           </mat-hint>
-          <mat-error *ngIf="form.get('title')?.invalid && form.get('title')?.value?.length >0 ">Error, text is too long
+          <mat-error *ngIf="form.get('title')?.invalid && form.get('title')?.value?.length >0">Error,
+            text is too long
           </mat-error>
         </mat-form-field>
 

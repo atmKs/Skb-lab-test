@@ -20,6 +20,7 @@ export class TaskComponent implements OnInit {
   public class = '';
   ngOnInit(): void {
     this.setClass();
+    console.log(this.task.date);
   }
   @Input() public task!: TaskInterface;
 
@@ -40,10 +41,10 @@ export class TaskComponent implements OnInit {
   public setClass(): void {
     if (
       this.task.date.diff(moment().startOf('day'), 'd') <= 3 &&
-      this.task.date.diff(moment().startOf('day'), 'd') > 0
+      this.task.date.diff(moment().startOf('day'), 'd') >= 0
     ) {
       this.class = 'yellow';
-    } else if (this.task.date.diff(moment().startOf('day'), 'd') <= 0) {
+    } else if (this.task.date.diff(moment().startOf('day'), 'd') < 0) {
       this.class = 'red';
     }
   }

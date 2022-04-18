@@ -59,8 +59,7 @@ export class CreateTaskComponent implements OnInit {
           Validators.maxLength(this.maxDescriptionFildLength),
         ],
       ],
-      date: [moment(), Validators.required],
-      status: TaskStatusInterface.InPgrogess,
+      date: moment(),
     });
     this.form.patchValue(this.dialogData);
   }
