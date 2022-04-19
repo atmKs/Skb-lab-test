@@ -16,8 +16,6 @@ import { TaskRoutingModule } from './task-routing.module';
   imports: [
     CommonModule,
     TaskRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     StoreModule.forFeature('tasks', reducers),
     SharedModule,
   ],

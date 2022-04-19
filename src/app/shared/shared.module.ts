@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,10 +22,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   imports: [CommonModule],
   exports: [
-    LayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatCardModule,
@@ -37,6 +35,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     DragDropModule,
     FormsModule,
     MatCheckboxModule,
+    ReactiveFormsModule,
   ],
   providers: [{ provide: DateAdapter, useClass: MomentDateAdapter }],
 })

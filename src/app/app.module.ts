@@ -19,7 +19,6 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     TaskModule,
     SharedModule,
     StoreModule.forRoot({}),
