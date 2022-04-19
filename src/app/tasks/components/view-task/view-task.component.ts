@@ -14,7 +14,7 @@ export class ViewTaskComponent implements OnInit {
     @Optional() @Inject(MAT_DIALOG_DATA) private dialogData: TaskInterface
   ) {}
 
-  ngOnInit() {
+ public ngOnInit() {
     this.initializeValues();
   }
 
