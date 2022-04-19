@@ -12,7 +12,6 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
-import { TaskStatusInterface } from '../../types/taskStatus.interface';
 import { Store } from '@ngrx/store';
 import { createTask } from '../../store/actions/task.action';
 
